@@ -1,0 +1,9 @@
+{
+  "nodes": [
+    {"id": 1, "port": 5001},
+    {"id": 2, "port": 5002},
+    {"id": 3, "port": 5003}
+  ],
+  "heartbeat_interval": 2,
+  "timeout": 5
+}
