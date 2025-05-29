@@ -1,4 +1,4 @@
-*Leader Election using Bully Algorithm*
+*Leader Election using Bully Algorithm
 
 
 1. git clone [https://github.com/Alex250801/Leader-Election.git ]
