@@ -4,6 +4,7 @@ import threading
 from environment.node_template import Node
 from environment.message_queue import register_node
 
+
 with open("config.json", "r") as f:
     config = json.load(f)
 
@@ -23,7 +24,7 @@ for node in nodes:
 
 ## CRASH Simulation
 def simulate_leader_crash():
-    time.sleep(5)
+    time.sleep(15)
     crash_node_id = max(id_to_node.keys())
     crashed_node = id_to_node[crash_node_id]
     print(f"\n***Simulating CRASH for Node {crash_node_id} ***\n")

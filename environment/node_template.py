@@ -54,6 +54,7 @@ class Node:
                 print(f"[Node {self.node_id}] Heartbeat received from leader {sender}") 
 
     def start_election(self):
+        self.election_start_time = time.time()
         if self.election_in_progress:
             return
 
@@ -88,7 +89,9 @@ class Node:
         self.election_in_progress = False
 
     def announce_coordinator(self):
-        print(f"[Node {self.node_id}] I am the new leader")
+
+        duration = time.time() - self.election_start_time
+        print(f"[Node {self.node_id}] I am the new leader  (Election took: {duration:.2f} seconds)")
         for node_id in self.nodes:
             if node_id != self.node_id:
                 send_message(node_id, {'type': 'coordinator', 'sender': self.node_id})
